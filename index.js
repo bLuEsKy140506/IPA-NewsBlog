@@ -281,13 +281,14 @@ const search = () => {
   blogData
     .filter((i) => !i.hide)
     .forEach((item) => {
-      let x = item.title.toLowerCase().includes(inputValue.value);
+      // test if the value of input text into object title
+      let x = item.title.toLocaleLowerCase().includes(inputValue.value);
 
       if (inputValue.value == "") {
         if (document.getElementById(`item-${item.id}`).matches(".hide"))
           document.getElementById(`item-${item.id}`).classList.remove("hide");
       }
-
+      //if not match hide the card(s)
       if (!x) {
         document.getElementById(`item-${item.id}`).classList.toggle("hide");
       }

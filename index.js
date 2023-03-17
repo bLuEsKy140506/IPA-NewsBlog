@@ -321,3 +321,7 @@ const reversed = () => {
   });
   displayerFunction(reverse.filter((i) => !i.hide)); //just display the card which not been hidden
 };
+const exitRestore = (obj) => {
+  document.getElementById(obj.id).parentElement.classList.toggle("hide");
+  displayerFunction(blogData.filter((i) => !i.hide));
+};

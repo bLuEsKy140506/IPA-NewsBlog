@@ -48,7 +48,8 @@
     </header>
       
     <!--TRIGGER FOR EXTRA SECTION-->
-    <div class="sticky-side-note"><span class="sticky-text" onclick="showExtra()">Extras</span><span id="cross"  onclick="document.getElementById(this.id).parentElement.remove()">&#10005;</span></div>
+    <div class="sticky-side-note"><span class="sticky-text" onclick="showExtra()">Extras</span><span id="cross"  onclick="document.getElementById(this.id).parentElement.remove()" 
+      >&#10005;</span></div>
     
      <!--MAIN SECTION <--START-->
     <main>
@@ -66,7 +67,7 @@
         <button id="filter-btn-1" type="button" onclick="sorted()">A ↓ </button>
         <button id="filter-btn-2" type="button" onclick="reversed()">A ↑ </button>
       </div>
-     <span id="cross-extra"  onclick="document.getElementById(this.id).parentElement.classList.toggle('hide')">&#10005;</span>
+     <span id="cross-extra"  onclick="exitRestore(this)">&#10005;</span>
       </section>
        <!--EXTRA SECTION (Integrating Archived Project) <--END-->
        <!--INJECTING HERE THE CARDS OF THE BLOGS <--START-->

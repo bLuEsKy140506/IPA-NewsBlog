@@ -1,0 +1,61 @@
+/* //888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
+//----------------------- COPIED FROM ARCHIVED PROJECT -------------------------------------
+//888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888 */
+
+.extra-container {
+  margin: 5px auto;
+  padding: 10px 0;
+  display: flex;
+  background: #192140;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.input-form {
+  margin: auto;
+}
+
+.input-form input {
+  font-size: 20px;
+  border-radius: 20px;
+  padding: 10px;
+  vertical-align: bottom;
+  border: 1px solid #192140;
+}
+
+.input-form button {
+  background-color: #dcf10d;
+  border: none;
+  color: #192140;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 30px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.input-form button:hover {
+  box-shadow: 0 5px 15px rgba(254, 254, 254, 0.577);
+}
+
+.small-button-container {
+  margin-top: 5px;
+}
+
+.small-button-container button {
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 10px 10px;
+}
+
+.small-button-container span {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.hide {
+  display: none;
+}

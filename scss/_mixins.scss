@@ -1,0 +1,27 @@
+@use "variables"; //variables for different colors
+
+@mixin flex-shorthand--direc-x-y(
+  $flex-direction: row,
+  $justify-content: space-between,
+  $align-items: center
+) {
+  display: flex;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  flex-wrap: wrap;
+}
+
+@mixin alignment-option1() {
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  padding: 0px;
+  gap: 1vw;
+  color: variables.$color-tertiaryFontColor;
+}
+
+@mixin presetFormat() {
+  border: 0.3rem solid variables.$color-linkActive;
+  background-color: variables.$color-linkActive;
+  color: variables.$color-primaryFontColor;
+}

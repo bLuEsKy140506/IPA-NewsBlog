@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/mediaqueries.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Individual Project News Website</title>
+  </head>
+  <body>
+    <!--HEADER SECTION-->
+    <header class="static">
+      <div class="nav-mobile-desktop">
+        <a href="https://refocus.me/ph"
+          ><img class="logo" src="assets/img-icon/Logo.svg"
+        /></a>
+        <img
+          class="hamburger-nav"
+          src="assets/img-icon/burgerNav.svg"
+          onclick="mobileDropDown()"
+        />
+      </div>
+      <nav class="menu">
+        <div class="menu-list">
+          <ul>
+            <li><a href="#" id="hovered">Blog</a></li>
+            <li><a href="https://refocus.me/ph/#ourcourses">Our courses</a></li>
+            <li><a href="https://refocus.me/ph/webinars">Free webinars</a></li>
+            <li><a href="https://refocus.me/ph/reviews">Reviews</a></li>
+          </ul>
+        </div>
+        <div class="menu-logIn">
+          <a
+            href="https://refocus.me/ph/reviews#signup"
+            class="btn no-outline"
+            id="no-outline"
+            >Sign up</a
+          >
+          <a
+            href="https://learning-ph.refocus.me/users/sign_in"
+            class="btn outline"
+            >Log in</a
+          >
+        </div>
+      </nav>
+    </header>
+      
+    <!--TRIGGER FOR EXTRA SECTION-->
+    <div class="sticky-side-note"><span class="sticky-text" onclick="showExtra()">Extras</span><span id="cross"  onclick="document.getElementById(this.id).parentElement.remove()">&#10005;</span></div>
+    
+     <!--MAIN SECTION <--START-->
+    <main>
+      <!--EXTRA SECTION (Integrating Archived Project) <--START-->
+      <!--This is not required on the PA, I just want to explore possibilities and used for my future references, also to share this-->
+      <section class="extra-container hide">
+      <div class="input-form">
+      <input id="search-input" type="text" placeholder="Search for news" />
+      <button id="search-btn" type="button" onclick="search()">Search</button>
+      <button id="search-btn" type="button" onclick="resetfield()">Clear</button>
+      </div>
+       
+      <div class="small-button-container">
+        <span>Filters:</span>
+        <button id="filter-btn-1" type="button" onclick="sorted()">A ↓ </button>
+        <button id="filter-btn-2" type="button" onclick="reversed()">A ↑ </button>
+      </div>
+     <span id="cross-extra"  onclick="document.getElementById(this.id).parentElement.classList.toggle('hide')">&#10005;</span>
+      </section>
+       <!--EXTRA SECTION (Integrating Archived Project) <--END-->
+       <!--INJECTING HERE THE CARDS OF THE BLOGS <--START-->
+      <section class="main-grid-container"></section>
+       <!--INJECTING HERE THE CARDS OF THE BLOGS <--END-->
+      </section>
+
+      <!--INJECTING HERE THE CONTENTS OF EACH RESPECTIVE CARD OF THE BLOGS <--START-->
+      <section class="content-container">
+        <div class="read-determiner">
+          <span class="not-yet" onclick="closeModal()">Read later</span>
+          <span class="finished" onclick="registerDone()">Done Reading</span>
+        </div>
+        <iframe
+          name="iframe_for_content"
+          class="modal-type"
+          title="blog content"
+        ></iframe>
+      </section>
+        <!--INJECTING HERE THE CONTENTS OF EACH RESPECTIVE CARD OF THE BLOGS <--END-->
+    </main>
+     <!--MAIN SECTION <-- END -->
+     <!--FOOTER SECTION-->
+    <footer>
+      <div class="links-refocus">
+        <div class="blog-section">
+          <h4>BLOG</h4>
+          <ul class="blog-list">
+            <li><a href="#">Data Analyst</a></li>
+            <li><a href="#">Web Developer</a></li>
+            <li><a href="#">Career</a></li>
+            <li><a href="#">Success Stories</a></li>
+            <li><a href="#">Resume</a></li>
+            <li><a href="#">Hard Skills</a></li>
+            <li><a href="#">Soft Skills</a></li>
+          </ul>
+        </div>
+        <div class="course-section">
+          <h4>OUR COURSES</h4>
+          <ul class="course-list">
+            <li>
+              <a href="https://refocus.me/ph/data-analyst">Data Analytics</a>
+            </li>
+            <li>
+              <a href="https://refocus.me/philippines-web-developer"
+                >Web Developement</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="links-others">
+        <div class="socials-links">
+          <h4>Follow Us</h4>
+          <ul class="socialmedia-list">
+            <li class="sm-icon-1">
+              <a href="#"
+                ><img src="assets/img-icon/icon_in.svg" alt="icon-linkin"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/img-icon/icon_insta.svg" alt="icon-instragam"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/img-icon/icon_fb.svg" alt="icon-facebook"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/img-icon/icon_twitter.svg" alt="icon-twitter"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/img-icon/icon_whatsup.svg" alt="icon-whatsup"
+              /></a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="assets/img-icon/icon_tiktok.svg" alt="icon-tiktok"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img src="assets/img-icon/icon_youtube.svg" alt="icon-youtube"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        <ul class="legal">
+          <span>&copy; Refocus Limited 2022</span>
+          <span>Privacy</span>
+          <span>·</span>
+          <span>Terms of Use</span>
+        </ul>
+      </div>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+</html>

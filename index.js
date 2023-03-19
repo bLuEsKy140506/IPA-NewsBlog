@@ -4,7 +4,7 @@ let itemContainer = document.querySelector(".main-grid-container");
 //Data section----------------
 const blogData = [
   {
-    id: "1",
+    id: "0",
     title: "Front-End vs Back-End Developer: What's the Difference?",
     date: "January 3, 2023",
     love: false,
@@ -17,7 +17,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "2",
+    id: "1",
     title: "What is a Full Stack Developer?",
     date: "January 12, 2023",
     love: false,
@@ -30,7 +30,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "3",
+    id: "2",
     title: "What are Soft Skills and How Do They Benefit Your Career?",
     date: "January 22, 2023",
     love: true,
@@ -43,7 +43,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "4",
+    id: "3",
     title: "IT Jobs: In-Demand, Available to Everyone, Ripe With Opportunity",
     date: "January 29, 2023",
     love: true,
@@ -56,7 +56,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "5",
+    id: "4",
     title: "7 Learning Tips for Data Science Self-study",
     date: "February 1, 2023",
     love: false,
@@ -69,7 +69,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "6",
+    id: "5",
     title: "Hard Skills vs. Soft Skills: Do You Really Need Both? Why?",
     date: "February 10, 2023",
     love: false,
@@ -82,7 +82,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "7",
+    id: "6",
     title: "What is Javascript?",
     date: "February 16, 2023",
     love: false,
@@ -95,7 +95,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "8",
+    id: "7",
     title: "Who is a Business Analyst: Roles, Skills, Salaries, Job Prospects",
     date: "February 22, 2023",
     love: false,
@@ -108,7 +108,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "9",
+    id: "eight",
     title: "How Much Do Data Analysts Make? 2023 Salary Guide",
     date: "February 24, 2023",
     love: true,
@@ -192,8 +192,11 @@ const displayerFunction = (arrayOfObject) => {
 //Delete Element
 const deleteElement = (obj) => {
   const deleteElementID = document.getElementById(obj.id).parentElement.id;
-  const deleteElementIDNumber = deleteElementID.slice(-1);
+  //modified for more the 10 cards
+  let indexof = deleteElementID.indexOf("-");
+  const deleteElementIDNumber = deleteElementID.slice(indexof + 1);
   let index = blogData.findIndex((x) => x.id == deleteElementIDNumber);
+
   blogData[index].hide = true;
   document.getElementById(deleteElementID).remove();
 };
@@ -207,6 +210,16 @@ const mobileDropDown = () => {
 //Mark done function
 const doneElement = (obj) => {
   const doneElems = document.getElementById(obj.id);
+
+  //modified for more the 10 cards
+  let indexof = doneElems.id.indexOf("-");
+  let doneElemsNumber = doneElems.id.slice(indexof + 1);
+  let index = blogData.findIndex((x) => x.id == doneElemsNumber);
+
+  blogData[index].done === true
+    ? (blogData[index].done = false)
+    : (blogData[index].done = true);
+
   doneElems.classList.toggle("show");
   doneElems.classList.toggle("markdone");
   doneElems.classList.remove("initialState");
@@ -215,6 +228,16 @@ const doneElement = (obj) => {
 //Add to favorite
 const changeOfHeart = (obj) => {
   const heart = document.getElementById(obj.id);
+
+  //modified for more the 10 cards
+  let indexof = heart.id.indexOf("-");
+  let heartID = Number(heart.id.slice(indexof + 1));
+  let index = blogData.findIndex((x) => x.id == heartID);
+
+  blogData[index].love === true
+    ? (blogData[index].love = false)
+    : (blogData[index].love = true);
+
   if (heart.textContent == `♥`) {
     heart.textContent = "♡";
   } else {

@@ -282,7 +282,9 @@ const search = () => {
     .filter((i) => !i.hide)
     .forEach((item) => {
       // test if the value of input text into object title
-      let x = item.title.toLocaleLowerCase().includes(inputValue.value);
+      let x = item.title
+        .toLocaleLowerCase()
+        .includes(inputValue.value.toLocaleLowerCase());
 
       if (inputValue.value == "") {
         if (document.getElementById(`item-${item.id}`).matches(".hide"))

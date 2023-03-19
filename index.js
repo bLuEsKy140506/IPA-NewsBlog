@@ -108,7 +108,7 @@ const blogData = [
     hide: false,
   },
   {
-    id: "eight",
+    id: "eight", //test simulation for any dynamic IDs
     title: "How Much Do Data Analysts Make? 2023 Salary Guide",
     date: "February 24, 2023",
     love: true,
@@ -141,7 +141,7 @@ const displayerFunction = (arrayOfObject) => {
       ? (myHeartStatus = `fav-heart fav-heart-blue`) &&
         (myHeartShape = `&#9829;`)
       : (myHeartStatus = `fav-heart`) && (myHeartShape = `&#9825;`);
-
+    //HTML structure to be injected
     const html = `
        <div class="grid-item" id="item-${each.id}">
           <span id="x-${each.id}" class="icon-cross" onclick="deleteElement(this)"
@@ -191,14 +191,12 @@ const displayerFunction = (arrayOfObject) => {
 
 //Delete Element
 const deleteElement = (obj) => {
-  const deleteElementID = document.getElementById(obj.id).parentElement.id;
+  let parent_node = document.getElementById(obj.id).parentElement.id;
+  let index = indexer(parent_node);
   //modified for more the 10 cards
-  let indexof = deleteElementID.indexOf("-");
-  const deleteElementIDNumber = deleteElementID.slice(indexof + 1);
-  let index = blogData.findIndex((x) => x.id == deleteElementIDNumber);
 
   blogData[index].hide = true;
-  document.getElementById(deleteElementID).remove();
+  document.getElementById(parent_node).remove();
 };
 
 //Dropdown for Mobile
@@ -212,9 +210,7 @@ const doneElement = (obj) => {
   const doneElems = document.getElementById(obj.id);
 
   //modified for more the 10 cards
-  let indexof = doneElems.id.indexOf("-");
-  let doneElemsNumber = doneElems.id.slice(indexof + 1);
-  let index = blogData.findIndex((x) => x.id == doneElemsNumber);
+  let index = indexer(doneElems.id);
 
   blogData[index].done === true
     ? (blogData[index].done = false)
@@ -230,9 +226,7 @@ const changeOfHeart = (obj) => {
   const heart = document.getElementById(obj.id);
 
   //modified for more the 10 cards
-  let indexof = heart.id.indexOf("-");
-  let heartID = Number(heart.id.slice(indexof + 1));
-  let index = blogData.findIndex((x) => x.id == heartID);
+  let index = indexer(heart.id);
 
   blogData[index].love === true
     ? (blogData[index].love = false)
@@ -244,6 +238,15 @@ const changeOfHeart = (obj) => {
     heart.textContent = "♥";
   }
   heart.classList.toggle("fav-heart-blue");
+};
+
+//CALLBACK 1 -----------------------------------------------------------------------------------------------------------------------------------------------
+//indexer is created to accomodate more 10 cards
+const indexer = (obj_id) => {
+  let indexof = obj_id.indexOf("-");
+  let objVariableIndex = obj_id.slice(indexof + 1);
+  let indexedNumber = blogData.findIndex((x) => x.id == objVariableIndex);
+  return indexedNumber;
 };
 
 //open modal functionality

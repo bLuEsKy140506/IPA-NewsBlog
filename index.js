@@ -257,7 +257,7 @@ const openModal = (obj) => {
   //when modal is opened, get the id from the card where its belongs
   iddone = document.getElementById(obj.id).id;
   //then get the object id number
-  iddoneNumber = iddone.slice(-1);
+  iddoneNumber = indexer(iddone);
   //show modal
   document.querySelector(".content-container").classList.toggle("show");
 };

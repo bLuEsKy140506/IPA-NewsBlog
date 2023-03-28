@@ -265,14 +265,16 @@ const openModal = (obj) => {
 //once it closed, update the mark element to unread icon to its source card
 const closeModal = () => {
   document.querySelector(".content-container").classList.toggle("show");
-
-  const registered = document.getElementById(`check-${iddoneNumber}`);
-  if (registered.matches(`.markdone`)) {
+  const registered = document.getElementById(
+    `check-${blogData[iddoneNumber].id}`
+  );
+  console.log(registered);
+  if (registered.matches(".markdone")) {
     registered.classList.toggle("markdone");
     registered.classList.toggle("show");
   }
   document
-    .getElementById(`check-${iddoneNumber}`)
+    .getElementById(`check-${blogData[iddoneNumber].id}`)
     .classList.remove("initialState");
 };
 
@@ -280,7 +282,9 @@ const closeModal = () => {
 const registerDone = () => {
   document.querySelector(".content-container").classList.toggle("show");
 
-  const registered = document.getElementById(`check-${iddoneNumber}`);
+  const registered = document.getElementById(
+    `check-${blogData[iddoneNumber].id}`
+  );
   //code here is self-explainatory
   if (!registered.matches(`.markdone`)) {
     registered.classList.toggle("markdone");
@@ -293,7 +297,6 @@ displayerFunction(blogData);
 
 //888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 //----------------------- EXTRA COMPONENT Functions -------------------------------------
-
 //888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888888
 
 //show the extra component

@@ -1,13 +1,12 @@
-Live view: [https://ipa-react-news-blog-butlay.vercel.app/](https://ipa-react-news-blog-butlay.vercel.app/)
+Live view:  [https://ipa-news-blog-butlay.vercel.app/](https://ipa-news-blog-butlay.vercel.app/)
 
 # IPA-NewsBlog-Butlay
 
 <h4>Goal</h4>
 <br />
-<p>Create a multi-page website application with blog posts.
-Users should be able to:</p>
-<li>Read a post preview</li>
-<li>Proceed to a post page with the content and comments</li>
-<li>Mark any post or comment as “favorite”</li>
-<li>Write comments on existing posts</li>
-<li>Write new posts</li>
+<p>Imagine you are already working as a web developer. Refocus hired you to create
+a news website where users can read news on web development. They can mark
+the news as “read” and “favorite” or delete them from their newsfeed. As a web
+developer, you need to create this website based on the ready-made design
+Refocus provided</p>
+
